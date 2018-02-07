@@ -29,7 +29,7 @@ then
 fi
 
 # Run email_notifier.py script.
-echo "Running Pusher.py. Logs Available in notifier.log file."
+echo "Running Pusher.py. Logs Available in pusher.log file."
 python Pusher.py >> pusher.log
 
 # Deactivating virtual environment
