@@ -1,0 +1,290 @@
+{
+  "extract_from": {
+    "MYSQL_HOST": "104.198.0.87",
+    "MYSQL_USER": "root",
+    "MYSQL_PASSWORD": "cfcwm07",
+    "MYSQL_DB": "curw_iot"
+  },
+  "push_to": {
+    "MYSQL_HOST": "104.198.0.87",
+    "MYSQL_USER": "root",
+    "MYSQL_PASSWORD": "cfcwm07",
+    "MYSQL_DB": "curw"
+  },
+  "stations": [
+    {
+      "stationId": "curw_kottawa_dharmapala_north",
+      "name": "Kottawa North Dharmapala School",
+      "station_meta": [
+        "curw_kottawa_dharmapala_north",
+        "Kottawa North Dharmapala School",
+        6.865576,
+        79.958181,
+        0,
+        "Kottawa North Dharmapala School"
+      ],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": [
+        "Precipitation",
+        "Temperature",
+        "Tick"
+      ],
+      "units": [
+        "mm",
+        "oC",
+        "-"
+      ],
+      "max_values": [
+        "120",
+        "40",
+        "1"
+      ],
+      "min_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "description": "Kottawa North Dharmapala School",
+      "run_name": "A&T Labs"
+    },
+    {
+      "stationId": "curw_orugodawatta",
+      "name": "Orugodawatta",
+      "station_meta": [
+        "curw_orugodawatta",
+        "Orugodawatta",
+        6.943741,
+        79.87887,
+        0,
+        "SLLRDC Colombo North Office"
+      ],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": [
+        "Precipitation",
+        "Temperature"
+      ],
+      "units": [
+        "mm",
+        "oC"
+      ],
+      "max_values": [
+        "120",
+        "40"
+      ],
+      "min_values": [
+        "0",
+        "0"
+      ],
+      "description": "SLLRDC Colombo North Office",
+      "run_name": "CUrW IoT"
+    },
+    {
+      "stationId": "curw_jaffna",
+      "name": "Jaffna",
+      "station_meta": [
+        "curw_jaffna",
+        "Jaffna",
+        9.6607949,
+        80.0298459,
+        0,
+        "District Secretariat Office Jaffna"
+      ],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": [
+        "Precipitation",
+        "Temperature",
+        "WindSpeed",
+        "WindGust",
+        "WindDirection",
+        "Humidity",
+        "SolarRadiation"
+      ],
+      "units": [
+        "mm",
+        "oC",
+        "m/s",
+        "m/s",
+        "degrees",
+        "%",
+        "W/m2"
+      ],
+      "max_values": [
+        "120",
+        "40",
+        "30",
+        "30",
+        "360",
+        "100",
+        "1413"
+      ],
+      "min_values": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "description": "District Secretariat Office Jaffna",
+      "run_name": "CUrW IoT",
+      "wunderground": {
+        "stationId": "IJAFFNAP2",
+        "password": "xjkyw8cn"
+      }
+    },
+    {
+      "stationId": "curw_hingurana",
+      "name": "Hingurana",
+      "station_meta": [
+        "curw_hingurana",
+        "Hingurana",
+        6.904552,
+        80.407895,
+        0,
+        "Hingurana Station"
+      ],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": [
+        "Precipitation",
+        "Temperature",
+        "WindSpeed",
+        "WindGust",
+        "WindDirection",
+        "Humidity",
+        "SolarRadiation"
+      ],
+      "units": [
+        "mm",
+        "oC",
+        "m/s",
+        "m/s",
+        "degrees",
+        "%",
+        "W/m2"
+      ],
+      "max_values": [
+        "120",
+        "40",
+        "30",
+        "30",
+        "360",
+        "100",
+        "1413"
+      ],
+      "min_values": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "description": "HINGURANA STATION",
+      "run_name": "CUrW IoT",
+      "wunderground": {
+        "stationId": "IKEGALLE2",
+        "password": "xt0eouz2"
+      },
+      "dialog": {
+        "stationId": "Hingurana",
+        "password": "3674010756837033"
+      }
+    },
+    {
+      "stationId": "curw_uduwawala",
+      "station_alias": "IKANDY2",
+      "name": "Uduwawala",
+      "station_meta": [
+        "curw_uduwawala",
+        "Uduwawala",
+        7.329,
+        80.613,
+        0,
+        "Uduwawala Station"
+      ],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": [
+        "Precipitation",
+        "Temperature",
+        "WindSpeed",
+        "WindGust",
+        "WindDirection",
+        "Humidity",
+        "SolarRadiation"
+      ],
+      "units": [
+        "mm",
+        "oC",
+        "m/s",
+        "m/s",
+        "degrees",
+        "%",
+        "W/m2"
+      ],
+      "max_values": [
+        "120",
+        "40",
+        "30",
+        "30",
+        "360",
+        "100",
+        "1413"
+      ],
+      "min_values": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "description": "UDUWAWALA STATION",
+      "run_name": "CUrW IoT",
+      "wunderground": {
+        "stationId": "IKANDY2",
+        "password": "lm120jbq"
+      }
+    },
+    {
+      "stationId": "curw_IBATTARA2",
+      "name": "IBATTARA2",
+      "station_meta": [
+        "curw_IBATTARA2",
+        "IBATTARA2",
+        6.908,
+        79.919,
+        0,
+        "Battaramulla"
+      ],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": [
+        "Precipitation",
+        "Temperature"
+      ],
+      "units": [
+        "mm",
+        "oC"
+      ],
+      "max_values": [
+        "120",
+        "40"
+      ],
+      "min_values": [
+        "0",
+        "0"
+      ],
+      "description": "Baththaramulla",
+      "run_name": "CUrW IoT",
+      "basin": "KLB"
+    }
+  ]
+}
