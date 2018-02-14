@@ -30,7 +30,12 @@ fi
 
 # Run email_notifier.py script.
 echo "Running Pusher.py. Logs Available in pusher.log file."
-python Pusher.py >> pusher.log
+#cmd >>file.txt 2>&1
+#Bash executes the redirects from left to right as follows:
+#  >>file.txt: Open file.txt in append mode and redirect stdout there.
+#  2>&1: Redirect stderr to "where stdout is currently going". In this case, that is a file opened in append mode.
+#In other words, the &1 reuses the file descriptor which stdout currently uses.
+python Pusher.py >> pusher.log 2>&1
 
 # Deactivating virtual environment
 echo "Deactivating virtual environment"
