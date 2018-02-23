@@ -44,7 +44,7 @@ def _extract_n_push(extract_adapter, push_adapter, station, start_date, end_date
     else:
         timeseries = extract_adapter.extract_grouped_time_series(timeseries_id, start_date, end_date, group_operation)
 
-    if timeseries is None or len(timeseries) <= 0:
+    if not isinstance(timeseries, list) or len(timeseries) <= 0:
         print("No value in the timeseries for the %s of station_Id: %s in the extracting DB."
               % (timeseries_meta['variable'], station['stationId']))
         return False
@@ -133,3 +133,112 @@ def extract_n_push_temperature(extract_adapter, push_adapter, station, start_dat
         end_date,
         timeseries_meta,
         TimeseriesGroupOperation.mysql_5min_avg)
+
+def extract_n_push_windspeed(extract_adapter, push_adapter, station, start_date, end_date):
+    # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
+    timeseries_meta = copy.deepcopy(timeseries_meta_struct)
+    timeseries_meta['station'] = station['name']
+    timeseries_meta['variable'] = 'WindSpeed'
+    timeseries_meta['unit'] = 'm/s'
+    timeseries_meta['type'] = station['type']
+    timeseries_meta['source'] = station['source']
+    timeseries_meta['name'] = station['run_name']
+
+    print("#############Extracting and Pushing WindSpeed of Station: %s###############" % station['name'])
+
+    _extract_n_push(
+        extract_adapter,
+        push_adapter,
+        station,
+        start_date,
+        end_date,
+        timeseries_meta,
+        TimeseriesGroupOperation.mysql_5min_avg)
+
+
+def extract_n_push_windgust(extract_adapter, push_adapter, station, start_date, end_date):
+    # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
+    timeseries_meta = copy.deepcopy(timeseries_meta_struct)
+    timeseries_meta['station'] = station['name']
+    timeseries_meta['variable'] = 'WindGust'
+    timeseries_meta['unit'] = 'm/s'
+    timeseries_meta['type'] = station['type']
+    timeseries_meta['source'] = station['source']
+    timeseries_meta['name'] = station['run_name']
+
+    print("#############Extracting and Pushing WindGust of Station: %s###############" % station['name'])
+
+    _extract_n_push(
+        extract_adapter,
+        push_adapter,
+        station,
+        start_date,
+        end_date,
+        timeseries_meta,
+        TimeseriesGroupOperation.mysql_5min_avg)
+
+
+# TODO think of a normalization form.
+def extract_n_push_winddirection(extract_adapter, push_adapter, station, start_date, end_date):
+        # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
+        timeseries_meta = copy.deepcopy(timeseries_meta_struct)
+        timeseries_meta['station'] = station['name']
+        timeseries_meta['variable'] = 'WindDirection'
+        timeseries_meta['unit'] = 'degrees'
+        timeseries_meta['type'] = station['type']
+        timeseries_meta['source'] = station['source']
+        timeseries_meta['name'] = station['run_name']
+
+        print("#############Extracting and Pushing WindDirection of Station: %s###############" % station['name'])
+
+        _extract_n_push(
+            extract_adapter,
+            push_adapter,
+            station,
+            start_date,
+            end_date,
+            timeseries_meta,
+            TimeseriesGroupOperation.mysql_5min_avg)
+
+
+def extract_n_push_solarradiation(extract_adapter, push_adapter, station, start_date, end_date):
+    # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
+    timeseries_meta = copy.deepcopy(timeseries_meta_struct)
+    timeseries_meta['station'] = station['name']
+    timeseries_meta['variable'] = 'SolarRadiation'
+    timeseries_meta['unit'] = 'W/m2'
+    timeseries_meta['type'] = station['type']
+    timeseries_meta['source'] = station['source']
+    timeseries_meta['name'] = station['run_name']
+
+    print("#############Extracting and Pushing SolarRadiation of Station: %s###############" % station['name'])
+
+    _extract_n_push(
+        extract_adapter,
+        push_adapter,
+        station,
+        start_date,
+        end_date,
+        timeseries_meta,
+        TimeseriesGroupOperation.mysql_5min_avg)
+
+def extract_n_push_humidity(extract_adapter, push_adapter, station, start_date, end_date):
+        # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
+        timeseries_meta = copy.deepcopy(timeseries_meta_struct)
+        timeseries_meta['station'] = station['name']
+        timeseries_meta['variable'] = 'Humidity'
+        timeseries_meta['unit'] = '%'
+        timeseries_meta['type'] = station['type']
+        timeseries_meta['source'] = station['source']
+        timeseries_meta['name'] = station['run_name']
+
+        print("#############Extracting and Pushing Humidity of Station: %s###############" % station['name'])
+
+        _extract_n_push(
+            extract_adapter,
+            push_adapter,
+            station,
+            start_date,
+            end_date,
+            timeseries_meta,
+            TimeseriesGroupOperation.mysql_5min_avg)

@@ -8,7 +8,15 @@ from datetime import datetime
 from datetime import timedelta
 
 from curwmysqladapter import MySQLAdapter, Station
-from Utils import extract_n_push_precipitation, extract_n_push_temperature
+from Utils import \
+    extract_n_push_precipitation, \
+    extract_n_push_temperature, \
+    extract_n_push_windspeed, \
+    extract_n_push_windgust, \
+    extract_n_push_humidity, \
+    extract_n_push_solarradiation, \
+    extract_n_push_winddirection
+
 
 def utc_to_sl(utc_dt):
     sl_timezone = pytz.timezone('Asia/Colombo')
@@ -63,14 +71,50 @@ try:
     for station in stations:
         print("**************** Station: %s, start_date: %s, end_date: %s **************"
               % (station['name'], start_datetime, end_datetime))
-        try:
-            extract_n_push_precipitation(extract_adapter, push_adapter, station, start_datetime, end_datetime)
-        except Exception as ex:
-            print("Error occured while pushing precipitation.", ex)
-        try:
-            extract_n_push_temperature(extract_adapter, push_adapter, station, start_datetime, end_datetime)
-        except Exception as ex:
-            print("Error occured while pushing temperature.", ex)
+
+        variables = station['variables']
+        if not isinstance(variables, list) or not len(variables) > 0:
+            print("Station's variable list is not valid.", variables)
+            continue
+
+        for variable in variables:
+            if variable == 'Precipitation':
+                try:
+                    extract_n_push_precipitation(extract_adapter, push_adapter, station, start_datetime, end_datetime)
+                except Exception as ex:
+                    print("Error occured while pushing precipitation.", ex)
+            elif variable == 'Temperature':
+                try:
+                    extract_n_push_temperature(extract_adapter, push_adapter, station, start_datetime, end_datetime)
+                except Exception as ex:
+                    print("Error occured while pushing temperature.", ex)
+            elif variable == 'WindSpeed':
+                try:
+                    extract_n_push_windspeed(extract_adapter, push_adapter, station, start_datetime, end_datetime)
+                except Exception as ex:
+                    print("Error occured while pushing wind-speed.", ex)
+            elif variable == 'WindGust':
+                try:
+                    extract_n_push_windgust(extract_adapter, push_adapter, station, start_datetime, end_datetime)
+                except Exception as ex:
+                    print("Error occured while pushing wind-gust.", ex)
+            elif variable == 'Humidity':
+                try:
+                    extract_n_push_humidity(extract_adapter, push_adapter, station, start_datetime, end_datetime)
+                except Exception as ex:
+                    print("Error occured while pushing humidity", ex)
+            elif variable == 'SolarRadiation':
+                try:
+                    extract_n_push_solarradiation(extract_adapter, push_adapter, station, start_datetime, end_datetime)
+                except Exception as ex:
+                    print("Error occured while pushing solar-radiation", ex)
+            elif variable == 'WindDirection':
+                try:
+                    extract_n_push_winddirection(extract_adapter, push_adapter, station, start_datetime, end_datetime)
+                except Exception as ex:
+                    print("Error occured while pushing solar-radiation", ex)
+            else:
+                print("Unknown variable type: %s" %variable)
 
 except Exception as ex:
     print('Error occurred while extracting and pushing data:', ex)
