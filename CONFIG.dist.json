@@ -13,6 +13,19 @@
   },
   "stations": [
     {
+            "stationId": "curw_ambewela",
+            "name": "Ambewela Farm",
+            "station_meta": ["curw_ambewela", "Ambewela Farm", 6.890585 , 80.802551, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
+            "source": "WeatherStation",
+            "type": "Observed",
+            "variables": ["Precipitation", "Temperature"],
+            "units": ["mm", "oC"],
+            "max_values": ["120", "40"],
+            "min_values": ["0", "0"],
+            "description": "A&T Communication Box, Texas Standard Rain Gauge",
+            "run_name": "A&T Labs"
+    },
+    {
       "stationId": "curw_mahapallegama",
       "name": "Mahapallegama",
       "station_meta": ["curw_mahapallegama", "Mahapallegama", 7.169737, 80.258512, 0, "Mahapallegama station with standard Gauge"],
