@@ -18,9 +18,9 @@
             "station_meta": ["curw_ambewela", "Ambewela Farm", 6.890585 , 80.802551, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
             "source": "WeatherStation",
             "type": "Observed",
-            "variables": ["Precipitation", "Temperature"],
-            "units": ["mm", "oC"],
-            "max_values": ["120", "40"],
+            "variables": ["Precipitation", "Tick"],
+            "units": ["mm", "-"],
+            "max_values": ["120", "1"],
             "min_values": ["0", "0"],
             "description": "A&T Communication Box, Texas Standard Rain Gauge",
             "run_name": "A&T Labs"
