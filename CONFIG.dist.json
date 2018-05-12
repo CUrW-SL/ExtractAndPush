@@ -13,17 +13,53 @@
   },
   "stations": [
     {
-            "stationId": "curw_ambewela",
-            "name": "Ambewela Farm",
-            "station_meta": ["curw_ambewela", "Ambewela Farm", 6.890585 , 80.802551, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
-            "source": "WeatherStation",
-            "type": "Observed",
-            "variables": ["Precipitation", "Tick"],
-            "units": ["mm", "-"],
-            "max_values": ["120", "1"],
-            "min_values": ["0", "0"],
-            "description": "A&T Communication Box, Texas Standard Rain Gauge",
-            "run_name": "A&T Labs"
+      "stationId": "curw_mulleriyawa",
+      "name": "Mulleriyawa",
+      "station_meta": ["curw_mulleriyawa", "Mulleriyawa", 6.890585 , 80.802551, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Tick"],
+      "units": ["mm", "-"],
+      "max_values": ["120", "1"],
+      "min_values": ["0", "0"],
+      "description": "A&T Communication Box, Texas Standard Rain Gauge",
+      "run_name": "A&T Labs"
+    }, {
+      "stationId": "curw_mutwal",
+      "name": "Mutwal",
+      "station_meta": ["curw_mutwal", "Mutwal", 6.95871 , 79.86090, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Tick"],
+      "units": ["mm", "-"],
+      "max_values": ["120", "1"],
+      "min_values": ["0", "0"],
+      "description": "A&T Communication Box, Texas Standard Rain Gauge",
+      "run_name": "A&T Labs"
+    }, {
+      "stationId": "curw_malabe",
+      "name": "Malabe",
+      "station_meta": ["curw_malabe", "Malabe", 6.90396 , 79.95738, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Tick"],
+      "units": ["mm", "-"],
+      "max_values": ["120", "1"],
+      "min_values": ["0", "0"],
+      "description": "A&T Communication Box, Texas Standard Rain Gauge",
+      "run_name": "A&T Labs"
+    },{
+      "stationId": "curw_ambewela",
+      "name": "Ambewela Farm",
+      "station_meta": ["curw_ambewela", "Ambewela Farm", 6.890585 , 80.802551, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Tick"],
+      "units": ["mm", "-"],
+      "max_values": ["120", "1"],
+      "min_values": ["0", "0"],
+      "description": "A&T Communication Box, Texas Standard Rain Gauge",
+      "run_name": "A&T Labs"
     },
     {
       "stationId": "curw_mahapallegama",
@@ -49,19 +85,6 @@
       "max_values": ["120", "40", "1", "30", "360", "100"],
       "min_values": ["0", "0", "0", "0", "0", "0"],
       "description": "Kottawa North Dharmapala School",
-      "run_name": "A&T Labs"
-    },
-    {
-      "stationId": "curw_ambatale",
-      "name": "Ambatale",
-      "station_meta": ["curw_ambatale", "Ambatale", 6.935762, 79.947458, 0, "Ambatale station with standard Gauge"],
-      "source": "WeatherStation",
-      "type": "Observed",
-      "variables": ["Precipitation", "Temperature", "Tick"],
-      "units": ["mm", "oC", "-"],
-      "max_values": ["120", "40", "1"],
-      "min_values": ["0", "0", "0"],
-      "description": "Ambatale",
       "run_name": "A&T Labs"
     },
     {
