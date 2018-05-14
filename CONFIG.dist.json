@@ -130,6 +130,34 @@
       "run_name": "A&T Labs"
     },
     {
+      "stationId": "curw_mulleriyawa",
+      "name": "Mulleriyawa",
+      "station_meta": ["curw_mulleriyawa", "Mulleriyawa", 6.890585 , 80.802551, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Tick"],
+      "units": ["mm", "-"],
+      "max_values": ["120", "1"],
+      "min_values": ["0", "0"],
+      "description": "A&T Communication Box, Texas Standard Rain Gauge",
+      "run_name": "A&T Labs"
+    },
+    {
+      "stationId": "curw_hingurana",
+      "name": "Hingurana",
+      "station_meta": ["curw_hingurana", "Hingurana", 6.904552, 80.407895, 0, "Hingurana Station"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindGust", "WindDirection", "Humidity", "SolarRadiation"],
+      "units": ["mm", "oC", "m/s", "m/s", "degrees", "%", "W/m2"],
+      "max_values": ["120", "40", "30", "30", "360", "100", "1413"],
+      "min_values": ["0", "0", "0", "0", "0", "0", "0"],
+      "description": "HINGURANA STATION",
+      "run_name": "CUrW IoT",
+      "wunderground": {"stationId": "IKEGALLE2", "password": "xt0eouz2"},
+      "dialog": {"stationId": "Hingurana", "password": "3674010756837033"}
+    },
+    {
       "stationId": "curw_jaffna",
       "name": "Jaffna",
       "station_meta": ["curw_jaffna", "Jaffna", 9.6607949, 80.0298459, 0, "District Secretariat Office Jaffna"],
@@ -184,19 +212,6 @@
       "description": "Baththaramulla",
       "run_name": "CUrW IoT",
       "basin": "KLB"
-    },
-    {
-      "stationId": "curw_mulleriyawa",
-      "name": "Mulleriyawa",
-      "station_meta": ["curw_mulleriyawa", "Mulleriyawa", 6.890585 , 80.802551, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
-      "source": "WeatherStation",
-      "type": "Observed",
-      "variables": ["Precipitation", "Tick"],
-      "units": ["mm", "-"],
-      "max_values": ["120", "1"],
-      "min_values": ["0", "0"],
-      "description": "A&T Communication Box, Texas Standard Rain Gauge",
-      "run_name": "A&T Labs"
     },
     {
       "stationId": "curw_thurstan_college",
