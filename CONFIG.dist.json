@@ -214,17 +214,17 @@
       "basin": "KLB"
     },
     {
-      "stationId": "curw_thurstan_college",
-      "name": "Thurstan College",
-      "station_meta": ["curw_thurstan_college", "Thurstan College", 6.90293, 79.85932, 0, "Leecom station with their own Rain Gauge"],
+      "stationId": "curw_urumewella",
+      "name": "Urumewella",
+      "station_meta": ["curw_urumewella", "Urumewella", 7.079348 , 80.348785 , 0, "A&T Communication Box, Texas Standard Rain Gauge"],
       "source": "WeatherStation",
       "type": "Observed",
-      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Tick"],
-      "units": ["mm", "oC", "m/s", "degrees", "%", "-"],
-      "max_values": ["120", "40", "30", "360", "100", "1"],
-      "min_values": ["0", "0", "0", "0", "0", "0"],
-      "description": "Thurstan College",
-      "run_name": "Leecom"
+      "variables": ["Precipitation", "Tick"],
+      "units": ["mm", "-"],
+      "max_values": ["120", "1"],
+      "min_values": ["0", "0"],
+      "description": "A&T Communication Box, Texas Standard Rain Gauge",
+      "run_name": "A&T Labs"
     }
   ]
 }
