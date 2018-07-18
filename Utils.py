@@ -28,7 +28,21 @@ def _precipitation_timeseries_processor(timeseries):
     return new_timeseries
 
 
-def _extract_n_push(extract_adapter, push_adapter, station, start_date, end_date, timeseries_meta, group_operation, timeseries_processor=None):
+def _waterlevel_timeseries_processor(timeseries, mean_sea_level):
+    if timeseries is None or len(timeseries) <= 0:
+        return []
+
+    if mean_sea_level is None or not isinstance(mean_sea_level, (float, int)):
+        raise ValueError('Invalid mean_sea_level. Should be a real number.')
+
+    new_timeseries = []
+    for tms_step in timeseries:
+        new_timeseries.append([tms_step[0], mean_sea_level - tms_step[1]])
+    return new_timeseries
+
+
+def _extract_n_push(extract_adapter, push_adapter, station, start_date, end_date, timeseries_meta, group_operation,
+                    timeseries_processor=None, **timeseries_processor_kwargs):
     # If there is no timeseries-id in the extracting DB then just return without doing anything.
     timeseries_id = extract_adapter.get_event_id(timeseries_meta)
     if timeseries_id is None:
@@ -39,7 +53,8 @@ def _extract_n_push(extract_adapter, push_adapter, station, start_date, end_date
     timeseries = []
     if timeseries_processor is not None:
         timeseries = timeseries_processor(
-            extract_adapter.extract_grouped_time_series(timeseries_id, start_date, end_date, group_operation)
+            extract_adapter.extract_grouped_time_series(timeseries_id, start_date, end_date, group_operation),
+            timeseries_processor_kwargs
         )
     else:
         timeseries = extract_adapter.extract_grouped_time_series(timeseries_id, start_date, end_date, group_operation)
@@ -222,6 +237,7 @@ def extract_n_push_solarradiation(extract_adapter, push_adapter, station, start_
         timeseries_meta,
         TimeseriesGroupOperation.mysql_5min_avg)
 
+
 def extract_n_push_humidity(extract_adapter, push_adapter, station, start_date, end_date):
         # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
         timeseries_meta = copy.deepcopy(timeseries_meta_struct)
@@ -242,3 +258,29 @@ def extract_n_push_humidity(extract_adapter, push_adapter, station, start_date, 
             end_date,
             timeseries_meta,
             TimeseriesGroupOperation.mysql_5min_avg)
+
+
+def extract_n_push_waterlevel(extract_adapter, push_adapter, station, start_date, end_date):
+    if 'mean_sea_level' not in station.keys():
+        raise AttributeError('Attribute mean_sea_level is required.')
+    msl = station['mean_sea_level']
+
+    # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
+    timeseries_meta = copy.deepcopy(timeseries_meta_struct)
+    timeseries_meta['station'] = station['name']
+    timeseries_meta['variable'] = 'Waterlevel'
+    timeseries_meta['unit'] = 'm'
+    timeseries_meta['type'] = station['type']
+    timeseries_meta['source'] = station['source']
+    timeseries_meta['name'] = station['run_name']
+
+    print("#############Extracting and water level of Station: %s###############" % station['name'])
+
+    _extract_n_push(
+        extract_adapter,
+        push_adapter,
+        station,
+        start_date,
+        end_date,
+        timeseries_meta,
+        TimeseriesGroupOperation.mysql_5min_avg, mean_sea_level=msl)

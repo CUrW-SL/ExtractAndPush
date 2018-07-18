@@ -15,7 +15,8 @@ from Utils import \
     extract_n_push_windgust, \
     extract_n_push_humidity, \
     extract_n_push_solarradiation, \
-    extract_n_push_winddirection
+    extract_n_push_winddirection, \
+    extract_n_push_waterlevel
 
 
 def utc_to_sl(utc_dt):
@@ -41,7 +42,10 @@ try:
         CONFIG = json.loads(open(os.path.join(ROOT_DIR, './CONFIG.json')).read())
     forceInsert = args.force
 
-    stations = CONFIG['stations']
+    weather_stations = CONFIG['weather_stations']
+    water_level_stations = CONFIG['water_level_stations']
+    stations = weather_stations + water_level_stations
+
 
     extract_from_db = CONFIG['extract_from']
     push_to_db = CONFIG['push_to']
@@ -65,8 +69,8 @@ try:
     start_datetime = start_datetime_obj.strftime(COMMON_DATE_FORMAT)
     end_datetime = end_datetime_obj.strftime(COMMON_DATE_FORMAT)
 
-    # start_datetime = '2018-02-06 23:50:00'
-    # end_datetime = '2018-02-07 23:59:59'
+    # start_datetime = '2018-07-06 00:00:00'
+    # end_datetime = '2018-07-19 00:00:00'
 
     for station in stations:
         print("**************** Station: %s, start_date: %s, end_date: %s **************"
@@ -113,6 +117,11 @@ try:
                     extract_n_push_winddirection(extract_adapter, push_adapter, station, start_datetime, end_datetime)
                 except Exception as ex:
                     print("Error occured while pushing solar-radiation", ex)
+            elif variable == 'Waterlevel':
+                try:
+                    extract_n_push_waterlevel(extract_adapter, push_adapter, station, start_datetime, end_datetime)
+                except Exception as ex:
+                    print("Error occured while pushing water-level", ex)
             else:
                 print("Unknown variable type: %s" %variable)
 
