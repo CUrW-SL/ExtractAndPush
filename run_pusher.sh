@@ -25,7 +25,7 @@ then
     echo "Installing pytz"
     pip install pytz
     echo "Installing mysqladapter"
-    pip install git+https://github.com/gihankarunarathne/CurwMySQLAdapter.git -U
+    pip install git+https://github.com/CUrW-SL/CurwMySQLAdapter.git -U
 fi
 
 # Run email_notifier.py script.
