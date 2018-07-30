@@ -69,8 +69,8 @@ try:
     start_datetime = start_datetime_obj.strftime(COMMON_DATE_FORMAT)
     end_datetime = end_datetime_obj.strftime(COMMON_DATE_FORMAT)
 
-    # start_datetime = '2018-07-06 00:00:00'
-    # end_datetime = '2018-07-19 00:00:00'
+    # start_datetime = '2018-07-04 00:00:00'
+    # end_datetime = '2018-07-31 00:00:00'
 
     for station in stations:
         print("**************** Station: %s, start_date: %s, end_date: %s **************"

@@ -1,4 +1,5 @@
 import copy
+import decimal
 
 from curwmysqladapter import TimeseriesGroupOperation, Station, Data
 
@@ -28,7 +29,7 @@ def _precipitation_timeseries_processor(timeseries, _):
     return new_timeseries
 
 
-def _waterlevel_timeseries_processor(timeseries, mean_sea_level):
+def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None):
     if timeseries is None or len(timeseries) <= 0:
         return []
 
@@ -37,7 +38,7 @@ def _waterlevel_timeseries_processor(timeseries, mean_sea_level):
 
     new_timeseries = []
     for tms_step in timeseries:
-        new_timeseries.append([tms_step[0], mean_sea_level - tms_step[1]])
+        new_timeseries.append([tms_step[0], decimal.Decimal(mean_sea_level) - tms_step[1]])
     return new_timeseries
 
 
@@ -54,7 +55,7 @@ def _extract_n_push(extract_adapter, push_adapter, station, start_date, end_date
     if timeseries_processor is not None:
         timeseries = timeseries_processor(
             extract_adapter.extract_grouped_time_series(timeseries_id, start_date, end_date, group_operation),
-            timeseries_processor_kwargs
+            **timeseries_processor_kwargs
         )
     else:
         timeseries = extract_adapter.extract_grouped_time_series(timeseries_id, start_date, end_date, group_operation)
@@ -283,4 +284,5 @@ def extract_n_push_waterlevel(extract_adapter, push_adapter, station, start_date
         start_date,
         end_date,
         timeseries_meta,
-        TimeseriesGroupOperation.mysql_5min_avg, mean_sea_level=msl)
+        TimeseriesGroupOperation.mysql_5min_avg,
+        timeseries_processor=_waterlevel_timeseries_processor, mean_sea_level=msl)
