@@ -13,7 +13,7 @@ timeseries_meta_struct = {
 }
 
 
-def _precipitation_timeseries_processor(timeseries, _):
+def _precipitation_timeseries_processor(timeseries, _=None):
     if timeseries is None or len(timeseries) <= 0:
         return []
 
