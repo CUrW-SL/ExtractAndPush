@@ -41,15 +41,15 @@
     {
       "stationId": "curw_kottawa_dharmapala_north",
       "name": "Kottawa North Dharmapala School",
-      "station_meta": ["curw_kottawa_dharmapala_north", "Kottawa North Dharmapala School", 6.865576, 79.958181, 0, "Kottawa North Dharmapala School"],
+      "station_meta": ["curw_kottawa_dharmapala_north", "Kottawa North Dharmapala School", 6.865576, 79.958180, 0, "Kottawa North Dharmapala School"],
       "source": "WeatherStation",
       "type": "Observed",
-      "variables": ["Precipitation", "Tick"],
-      "units": ["mm", "-"],
-      "max_values": ["120", "1"],
-      "min_values": ["0", "0"],
+      "variables": ["Precipitation", "Temperature", "Tick", "WindSpeed", "WindDirection", "Humidity"],
+      "units": ["mm", "oC", "-", "m/s", "degrees", "%"],
+      "max_values": ["120", "40", "1", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0", "0"],
       "description": "Kottawa North Dharmapala School",
-      "run_name": "A&T Labs"
+      "run_name": "Leecom"
     },
     {
       "stationId": "curw_hingurana",
