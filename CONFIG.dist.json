@@ -283,6 +283,48 @@
       "description": "Leecom water level guage, Leecom communication box",
       "run_name": "Leecom",
       "mean_sea_level": 6.716
+    },
+    {
+      "stationId": "curw_wl_ingurukade",
+      "name": "Ingurukade",
+      "station_meta": ["curw_wl_ingurukade", "Ingurukade", 0.0 , 0.0, 0, "Leecom water level guage, Leecom communication box"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Waterlevel"],
+      "units": ["m"],
+      "max_values": ["30"],
+      "min_values": ["0"],
+      "description": "Leecom water level guage, Leecom communication box",
+      "run_name": "Leecom",
+      "mean_sea_level": 6.975
+    },
+    {
+      "stationId": "curw_wl_yakbedda",
+      "name": "Yakbedda",
+      "station_meta": ["curw_wl_yakbedda", "Yakbedda", 0.0 , 0.0, 0, "Leecom water level guage, Leecom communication box"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Waterlevel"],
+      "units": ["m"],
+      "max_values": ["30"],
+      "min_values": ["0"],
+      "description": "Leecom water level guage, Leecom communication box",
+      "run_name": "Leecom",
+      "mean_sea_level": 6.005
+    },
+    {
+      "stationId": "curw_wl_wellampitiya",
+      "name": "Wellampitiya",
+      "station_meta": ["curw_wl_wellampitiya", "Wellampitiya", 0.0 , 0.0, 0, "Leecom water level guage, Leecom communication box"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Waterlevel"],
+      "units": ["m"],
+      "max_values": ["30"],
+      "min_values": ["0"],
+      "description": "Leecom water level guage, Leecom communication box",
+      "run_name": "Leecom",
+      "mean_sea_level": 7.615
     }
   ]
 }
