@@ -156,6 +156,19 @@
       "run_name": "A&T Labs"
     },
     {
+      "stationId": "curw_attidiya",
+      "name": "Attidiya",
+      "station_meta": ["curw_attidiya", "Attidiya", 6.8458199, 79.8829689, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Tick"],
+      "units": ["mm", "-"],
+      "max_values": ["120", "1"],
+      "min_values": ["0", "0"],
+      "description": "A&T Communication Box, Texas Standard Rain Gauge",
+      "run_name": "A&T Labs"
+    },
+    {
       "stationId": "curw_hingurana",
       "name": "Hingurana",
       "station_meta": ["curw_hingurana", "Hingurana", 6.904552, 80.407895, 0, "Hingurana Station"],
