@@ -377,7 +377,7 @@
       "max_values": ["30"],
       "min_values": ["0"],
       "description": "Yantai water level guage, A&T communication box",
-      "run_name": "Leecom",
+      "run_name": "A&T Labs",
       "mean_sea_level": 67.586
     }
   ]
