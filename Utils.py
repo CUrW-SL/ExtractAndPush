@@ -30,6 +30,8 @@ def _precipitation_timeseries_processor(timeseries, _=None):
 
 
 def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None):
+    print("**_waterlevel_timeseries_processor**")
+    print(timeseries)
     if timeseries is None or len(timeseries) <= 0:
         return []
 
@@ -42,6 +44,8 @@ def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None):
         # Waterlevel should be in between -1 and 3
         if -1 <= wl <= 3:
             new_timeseries.append([tms_step[0], wl])
+    print("New Timeseries:")
+    print(new_timeseries)
     return new_timeseries
 
 
