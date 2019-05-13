@@ -369,14 +369,14 @@
     {
       "stationId": "curw_wl_kitulgala",
       "name": "Kitulgala",
-      "station_meta": ["curw_wl_kitulgala", "Kitulgala", 6.985569, 80.424258, 0, "Yantai water level guage, A&T communication box"],
+      "station_meta": ["curw_wl_kitulgala", "Kitulgala", 6.985569 , 80.424258, 0, "Yantai water level guage, A&T communication"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
       "units": ["m"],
       "max_values": ["30"],
       "min_values": ["0"],
-      "description": "Yantai water level guage, A&T communication box",
+      "description": "Yantai water level guage, A&T communication",
       "run_name": "A&T Labs",
       "mean_sea_level": 67.586
     }
