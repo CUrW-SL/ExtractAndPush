@@ -30,8 +30,8 @@ def _precipitation_timeseries_processor(timeseries, _=None):
 
 
 def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None):
-    print("**_waterlevel_timeseries_processor**")
-    print(timeseries)
+    # print("**_waterlevel_timeseries_processor**")
+    # print(timeseries)
     if timeseries is None or len(timeseries) <= 0:
         return []
 
@@ -51,8 +51,8 @@ def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None):
             # Waterlevel should be in between -1 and 3
             if -1 <= wl <= 3:
                 new_timeseries.append([tms_step[0], wl])
-    print("New Timeseries:")
-    print(new_timeseries)
+    # print("New Timeseries:")
+    # print(new_timeseries)
     return new_timeseries
 
 
@@ -61,12 +61,12 @@ def _extract_n_push(extract_adapter, push_adapter, station, start_date, end_date
     # If there is no timeseries-id in the extracting DB then just return without doing anything.
 
     timeseries_id = extract_adapter.get_event_id(timeseries_meta)
-    print("*****************")
-    print(timeseries_id)
-    print(start_date)
-    print(end_date)
-    print(group_operation)
-    print("*****************")
+    # print("*****************")
+    # print(timeseries_id)
+    # print(start_date)
+    # print(end_date)
+    # print(group_operation)
+    # print("*****************")
     if timeseries_id is None:
         print("No timeseries for the Precipitation of station_Id: %s in the extracting DB."
               % station['stationId'])
@@ -74,18 +74,18 @@ def _extract_n_push(extract_adapter, push_adapter, station, start_date, end_date
 
     timeseries = []
     if timeseries_processor is not None:
-        print("1")
+        # print("1")
         timeseries = timeseries_processor(
             extract_adapter.extract_grouped_time_series(timeseries_id, start_date, end_date, group_operation),
             **timeseries_processor_kwargs
         )
-        print(timeseries)
+        # print(timeseries)
     else:
-        print("2")
+        # print("2")
         timeseries = extract_adapter.extract_grouped_time_series(timeseries_id, start_date, end_date, group_operation)
-        print(timeseries)
+        # print(timeseries)
 
-    print(timeseries,list)
+    # print(timeseries,list)
     if not isinstance(timeseries, list) or len(timeseries) <= 0:
         print("No value in the timeseries for the %s of station_Id: %s in the extracting DB."
               % (timeseries_meta['variable'], station['stationId']))
