@@ -39,11 +39,18 @@ def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None):
         raise ValueError('Invalid mean_sea_level. Should be a real number.')
 
     new_timeseries = []
-    for tms_step in timeseries:
-        wl = decimal.Decimal(mean_sea_level) - tms_step[1]
-        # Waterlevel should be in between -1 and 3
-        if -1 <= wl <= 3:
-            new_timeseries.append([tms_step[0], wl])
+    if decimal.Decimal(mean_sea_level) > 30.00:
+        for tms_step in timeseries:
+            wl = decimal.Decimal(mean_sea_level) - tms_step[1]
+            # Waterlevel should be in between -1 and 3
+            if 40 <= wl <= 75:
+                new_timeseries.append([tms_step[0], wl])
+    else:
+        for tms_step in timeseries:
+            wl = decimal.Decimal(mean_sea_level) - tms_step[1]
+            # Waterlevel should be in between -1 and 3
+            if -1 <= wl <= 3:
+                new_timeseries.append([tms_step[0], wl])
     print("New Timeseries:")
     print(new_timeseries)
     return new_timeseries
