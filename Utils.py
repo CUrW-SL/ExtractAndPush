@@ -62,7 +62,8 @@ def _extract_n_push(extract_adapter, push_adapter, station, start_date, end_date
         )
     else:
         timeseries = extract_adapter.extract_grouped_time_series(timeseries_id, start_date, end_date, group_operation)
-        print(timeseries,list)
+        
+    print(timeseries,list)
     if not isinstance(timeseries, list) or len(timeseries) <= 0:
         print("No value in the timeseries for the %s of station_Id: %s in the extracting DB."
               % (timeseries_meta['variable'], station['stationId']))
