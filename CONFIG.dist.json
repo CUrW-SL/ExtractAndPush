@@ -382,8 +382,8 @@
     },
     {
       "stationId": "curw_wl_ranwala",
-      "name": "Ranwala",
-      "station_meta": ["curw_wl_ranwala", "Ranwala", 6.890585 , 80.802551, 0, "Campbell water level guage, A&T communication"],
+      "name": "Ranwala Bridge",
+      "station_meta": ["curw_wl_ranwala", "Ranwala Bridge", 6.890585 , 80.802551, 0, "Campbell water level guage, A&T communication"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
