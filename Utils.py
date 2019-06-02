@@ -49,7 +49,7 @@ def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None):
         for tms_step in timeseries:
             wl = decimal.Decimal(mean_sea_level) - tms_step[1]
             # Waterlevel should be in between -1 and 3
-            if -1 <= wl <= 3:
+            if -1 <= wl <= 12:
                 new_timeseries.append([tms_step[0], wl])
     # print("New Timeseries:")
     # print(new_timeseries)
