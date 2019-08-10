@@ -264,6 +264,19 @@
       "min_values": ["0", "0"],
       "description": "A&T Communication Box, Texas Standard Rain Gauge",
       "run_name": "A&T Labs"
+    },
+    {
+      "stationId": "curw_ws_aruwakkalu",
+      "name": "Aruwakkalu",
+      "station_meta": ["curw_ws_aruwakkalu", "Aruwakkalu", 8.241336 , 79.819860, 0, "Leecom station, Aruwakkalu Sanitary Landfill"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Tick"],
+      "units": ["mm", "oC", "m/s", "degrees", "%", "-"],
+      "max_values": ["120", "40", "30", "360", "100", "1"],
+      "min_values": ["0", "0", "0", "0", "0", "0"],
+      "description": "Leecom station, Aruwakkalu Sanitary Landfill",
+      "run_name": "Leecom"
     }
   ],
   "water_level_stations": [
