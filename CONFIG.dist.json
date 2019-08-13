@@ -54,7 +54,7 @@
     {
       "stationId": "curw_kotikawatta",
       "name": "Kotikawatta",
-      "station_meta": ["curw_kotikawatta", "Kotikawatta", 6.890585 , 80.802551, 0, "Leecom station with their own Rain Gauge"],
+      "station_meta": ["curw_kotikawatta", "Kotikawatta", 6.93494, 79.915356, 0, "Leecom station with their own Rain Gauge"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Tick"],
@@ -63,19 +63,6 @@
       "min_values": ["0", "0", "0", "0", "0", "0"],
       "description": "Kotikawatta",
       "run_name": "Leecom"
-    },
-    {
-      "stationId": "curw_hingurana",
-      "name": "Hingurana",
-      "station_meta": ["curw_hingurana", "Hingurana", 6.904552, 80.407895, 0, "Hingurana Station"],
-      "source": "WeatherStation",
-      "type": "Observed",
-      "variables": ["Precipitation", "Temperature", "Tick"],
-      "units": ["mm", "oC", "-"],
-      "max_values": ["120", "40", "1"],
-      "min_values": ["0", "0", "0"],
-      "description": "HINGURANA STATION",
-      "run_name": "A&T Labs"
     },
     {
       "stationId": "curw_waga",
@@ -145,7 +132,7 @@
     {
       "stationId": "curw_mulleriyawa",
       "name": "Mulleriyawa",
-      "station_meta": ["curw_mulleriyawa", "Mulleriyawa", 6.890585 , 80.802551, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
+      "station_meta": ["curw_mulleriyawa", "Mulleriyawa", 6.923571, 79.941176, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Tick"],
@@ -255,7 +242,7 @@
     {
       "stationId": "curw_urumewella",
       "name": "Urumewella",
-      "station_meta": ["curw_urumewella", "Urumewella", 7.079348 , 80.348785 , 0, "A&T Communication Box, Texas Standard Rain Gauge"],
+      "station_meta": ["curw_urumewella", "Urumewella", 7.079348, 80.348785 , 0, "A&T Communication Box, Texas Standard Rain Gauge"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Tick"],
@@ -268,7 +255,7 @@
     {
       "stationId": "curw_ws_aruwakkalu",
       "name": "Aruwakkalu",
-      "station_meta": ["curw_ws_aruwakkalu", "Aruwakkalu", 8.241336 , 79.819860, 0, "Leecom station, Aruwakkalu Sanitary Landfill"],
+      "station_meta": ["curw_ws_aruwakkalu", "Aruwakkalu", 8.241336, 79.819860, 0, "Leecom station, Aruwakkalu Sanitary Landfill"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Tick"],
@@ -283,7 +270,7 @@
     {
       "stationId": "curw_wl_test",
       "name": "Leecom WL Guage",
-      "station_meta": ["curw_wl_test", "Leecom WL Guage", 6.890585, 80.802551, 0, "Leecom water level guage, testing station"],
+      "station_meta": ["curw_wl_test", "Leecom WL Guage", 6.879243, 79.929304, 0, "Leecom water level guage, testing station"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
@@ -297,7 +284,7 @@
     {
       "stationId": "curw_wl_diyasaru_uyana",
       "name": "Diyasaru Uyana",
-      "station_meta": ["curw_wl_diyasaru_uyana", "Diyasaru Uyana", 6.890585 , 80.802551, 0, "Yantai water level guage, A&T communication"],
+      "station_meta": ["curw_wl_diyasaru_uyana", "Diyasaru Uyana", 6.878987, 79.930433, 0, "Yantai water level guage, A&T communication"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
@@ -326,7 +313,7 @@
     {
       "stationId": "curw_wl_ingurukade",
       "name": "Ingurukade",
-      "station_meta": ["curw_wl_ingurukade", "Ingurukade", 0.0 , 0.0, 0, "Leecom water level guage, Leecom communication box"],
+      "station_meta": ["curw_wl_ingurukade", "Ingurukade", 6.95101, 79.87467, 0, "Leecom water level guage, Leecom communication box"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
@@ -340,7 +327,7 @@
     {
       "stationId": "curw_wl_yakbedda",
       "name": "Yakbedda",
-      "station_meta": ["curw_wl_yakbedda", "Yakbedda", 0.0 , 0.0, 0, "Leecom water level guage, Leecom communication box"],
+      "station_meta": ["curw_wl_yakbedda", "Yakbedda", 6.92361, 79.89105, 0, "Leecom water level guage, Leecom communication box"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
@@ -354,7 +341,7 @@
     {
       "stationId": "curw_wl_wellampitiya",
       "name": "Wellampitiya",
-      "station_meta": ["curw_wl_wellampitiya", "Wellampitiya", 0.0 , 0.0, 0, "Leecom water level guage, Leecom communication box"],
+      "station_meta": ["curw_wl_wellampitiya", "Wellampitiya", 6.93721, 79.8973, 0, "Leecom water level guage, Leecom communication box"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
@@ -368,7 +355,7 @@
     {
       "stationId": "curw_wl_wellawatta",
       "name": "Wellawatta",
-      "station_meta": ["curw_wl_wellawatta", "Wellawatta", 6.88041 , 79.86208, 0, "Leecom water level guage, Leecom communication box"],
+      "station_meta": ["curw_wl_wellawatta", "Wellawatta", 6.88041, 79.86208, 0, "Leecom water level guage, Leecom communication box"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
@@ -396,7 +383,7 @@
     {
       "stationId": "curw_wl_ranwala",
       "name": "Ranwala Bridge",
-      "station_meta": ["curw_wl_ranwala", "Ranwala Bridge", 6.890585 , 80.802551, 0, "Campbell water level guage, A&T communication"],
+      "station_meta": ["curw_wl_ranwala", "Ranwala Bridge", 6.970685, 80.165118, 0, "Campbell water level guage, A&T communication"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
@@ -410,7 +397,7 @@
     {
       "stationId": "curw_wl_mattakkuliya",
       "name": "Mattakkuliya",
-      "station_meta": ["curw_wl_mattakkuliya", "Mattakkuliya", 6.980881 , 79.875169, 0, "Yantai water level guage, A&T communication"],
+      "station_meta": ["curw_wl_mattakkuliya", "Mattakkuliya", 6.980881, 79.875169, 0, "Yantai water level guage, A&T communication"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
