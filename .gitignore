@@ -1,0 +1,4 @@
+*.log
+venv/
+CONFIG.backup.json
+__pycache__/
