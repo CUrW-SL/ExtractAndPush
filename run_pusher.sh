@@ -5,7 +5,7 @@ echo `date`
 
 # Change directory into where email_notifer.py script is located.
 echo "Changing into ~/data-pusher"
-cd /home/uwcc-admin/data-pusher
+cd /home/uwcc-admin/ExtractAndPush
 echo "Inside `pwd`"
 
 # If no venv (python3 virtual environment) exists, then create one.
@@ -25,7 +25,7 @@ then
     echo "Installing pytz"
     pip install pytz
     echo "Installing mysqladapter"
-    pip install git+https://github.com/CUrW-SL/CurwMySQLAdapter.git -U
+    pip install git+https://github.com/gihankarunarathne/CurwMySQLAdapter.git -U
 fi
 
 # Run email_notifier.py script.
