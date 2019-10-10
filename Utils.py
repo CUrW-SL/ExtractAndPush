@@ -29,7 +29,7 @@ def _precipitation_timeseries_processor(timeseries, _=None):
     return new_timeseries
 
 
-def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None):
+def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None, waterLevel_min=None, waterLevel_max=None):
     # print("**_waterlevel_timeseries_processor**")
     # print(timeseries)
     if timeseries is None or len(timeseries) <= 0:
@@ -43,13 +43,13 @@ def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None):
         for tms_step in timeseries:
             wl = decimal.Decimal(mean_sea_level) - tms_step[1]
             # Waterlevel should be in between -1 and 3
-            if 40 <= wl <= 75:
+            if decimal.Decimal(waterLevel_min) <= wl <= decimal.Decimal(waterLevel_max):
                 new_timeseries.append([tms_step[0], wl])
     else:
         for tms_step in timeseries:
             wl = decimal.Decimal(mean_sea_level) - tms_step[1]
             # Waterlevel should be in between -1 and 3
-            if -1 <= wl <= 12:
+            if decimal.Decimal(waterLevel_min) <= wl <= decimal.Decimal(waterLevel_max):
                 new_timeseries.append([tms_step[0], wl])
     # print("New Timeseries:")
     # print(new_timeseries)
@@ -291,6 +291,8 @@ def extract_n_push_waterlevel(extract_adapter, push_adapter, station, start_date
     if 'mean_sea_level' not in station.keys():
         raise AttributeError('Attribute mean_sea_level is required.')
     msl = station['mean_sea_level']
+    wl_min = station['min_wl']
+    wl_max = station['max_wl']
 
     # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
     timeseries_meta = copy.deepcopy(timeseries_meta_struct)
@@ -311,4 +313,4 @@ def extract_n_push_waterlevel(extract_adapter, push_adapter, station, start_date
         end_date,
         timeseries_meta,
         TimeseriesGroupOperation.mysql_5min_avg,
-        timeseries_processor=_waterlevel_timeseries_processor, mean_sea_level=msl)
+        timeseries_processor=_waterlevel_timeseries_processor, mean_sea_level=msl, waterLevel_min=wl_min, waterLevel_max=wl_max)
