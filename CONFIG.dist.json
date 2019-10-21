@@ -595,22 +595,6 @@
       "max_wl": 10.000
     },
     {
-      "stationId": "curw_wl_mattakkuliya",
-      "name": "Mattakkuliya Bridge",
-      "station_meta": ["curw_wl_mattakkuliya", "Mattakkuliya Bridge", 6.980881, 79.875169, 0, "Yantai water level guage, A&T communication"],
-      "source": "WeatherStation",
-      "type": "Observed",
-      "variables": ["Waterlevel"],
-      "units": ["m"],
-      "max_values": ["30"],
-      "min_values": ["0"],
-      "description": "Yantai water level guage, A&T communication",
-      "run_name": "A&T Labs",
-      "mean_sea_level": 7.057,
-      "min_wl": -2.000,
-      "max_wl": 3.000
-    },
-    {
       "stationId": "curw_wl_kaduwela",
       "name": "Kaduwela Bridge",
       "station_meta": ["curw_wl_kaduwela", "Kaduwela Bridge", 6.936431, 79.985192, 0, "Campbell water level guage, A&T communication box"],
