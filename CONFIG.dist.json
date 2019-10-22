@@ -592,7 +592,7 @@
       "run_name": "A&T Labs",
       "mean_sea_level": 16.872,
       "min_wl": 5.000,
-      "max_wl": 10.000
+      "max_wl": 12.000
     },
     {
       "stationId": "curw_wl_kaduwela",
@@ -608,7 +608,7 @@
       "run_name": "A&T Labs",
       "mean_sea_level": 11.540,
       "min_wl": -1.000,
-      "max_wl": 5.000
+      "max_wl": 7.000
 
     }
   ]
