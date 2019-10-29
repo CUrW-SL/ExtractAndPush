@@ -493,7 +493,7 @@
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Tick"],
-      "units": ["mm", "oC", "m/s", "degrees", "%", "-""],
+      "units": ["mm", "oC", "m/s", "degrees", "%", "-"],
       "max_values": ["120", "40", "30", "360", "100", "1"],
       "min_values": ["0", "0", "0", "0", "0", "0"],
       "description": "Kaduwela",
