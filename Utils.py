@@ -24,20 +24,22 @@ def _precipitation_timeseries_processor(timeseries, _=None):
         datetime = timeseries[index+1][0]
         instantaneous_percipitation = timeseries[index+1][1] - timeseries[index][1]
 
-        #value = 0 if instantaneous_percipitation < 0 else instantaneous_percipitation
-        if instantaneous_percipitation < 0:
-            value = 0
-
-        elif 0 < instantaneous_percipitation < qualitControl:
-            value = instantaneous_percipitation
-
-        elif instantaneous_percipitation > qualitControl:
-            value = None
-
-        else:
-            value = None
-
+        value = 0 if instantaneous_percipitation < 0 else instantaneous_percipitation
         new_timeseries.append([datetime, value])
+        #value = 0 if instantaneous_percipitation < 0 else instantaneous_percipitation
+        #if instantaneous_percipitation < 0:
+        #    value = 0
+
+        #elif 0 < instantaneous_percipitation < qualitControl:
+        #    value = instantaneous_percipitation
+
+        #elif instantaneous_percipitation > qualitControl:
+        #    value = None
+
+        #else:
+        #    value = None
+
+        #new_timeseries.append([datetime, value])
 
         index += 1
 
