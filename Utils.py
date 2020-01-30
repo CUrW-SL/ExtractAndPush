@@ -342,7 +342,7 @@ def extract_n_push_pressure(extract_adapter, push_adapter, station, start_date, 
     timeseries_meta['source'] = station['source']
     timeseries_meta['name'] = station['run_name']
 
-    print("#############Extracting and Pushing Humidity of Station: %s###############" % station['name'])
+    print("#############Extracting and Pushing Pressure of Station: %s###############" % station['name'])
 
     _extract_n_push(
         extract_adapter,

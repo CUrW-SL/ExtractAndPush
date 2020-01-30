@@ -128,7 +128,7 @@ try:
                 try:
                     extract_n_push_pressure(extract_adapter, push_adapter, station, start_datetime, end_datetime)
                 except Exception as ex:
-                    print("Error occured while pushing water-level", ex)
+                    print("Error occured while pushing Pressure", ex)
 
             else:
                 print("Unknown variable type: %s" %variable)
