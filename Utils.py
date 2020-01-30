@@ -331,3 +331,24 @@ def extract_n_push_waterlevel(extract_adapter, push_adapter, station, start_date
         timeseries_meta,
         TimeseriesGroupOperation.mysql_5min_avg,
         timeseries_processor=_waterlevel_timeseries_processor, mean_sea_level=msl, waterLevel_min=wl_min, waterLevel_max=wl_max)
+
+def extract_n_push_pressure(extract_adapter, push_adapter, station, start_date, end_date):
+    # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
+    timeseries_meta = copy.deepcopy(timeseries_meta_struct)
+    timeseries_meta['station'] = station['name']
+    timeseries_meta['variable'] = 'Pressure'
+    timeseries_meta['unit'] = '%'
+    timeseries_meta['type'] = station['type']
+    timeseries_meta['source'] = station['source']
+    timeseries_meta['name'] = station['run_name']
+
+    print("#############Extracting and Pushing Humidity of Station: %s###############" % station['name'])
+
+    _extract_n_push(
+        extract_adapter,
+        push_adapter,
+        station,
+        start_date,
+        end_date,
+        timeseries_meta,
+        TimeseriesGroupOperation.mysql_5min_avg)
