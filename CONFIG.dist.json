@@ -624,7 +624,7 @@
       "min_values": ["0"],
       "description": "Yantai water level guage, Leecom station",
       "run_name": "Leecom",
-      "mean_sea_level": 7.057,,
+      "mean_sea_level": 7.057,
       "min_wl": -1.000,
       "max_wl": 3.000
     }
