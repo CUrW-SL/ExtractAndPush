@@ -22,6 +22,7 @@ source venv/bin/activate
 # Install PyMySQL using pip.
 if [ ! -f "pusher.log" ]
 then
+    pip install pandas
     echo "Installing pytz"
     pip install pytz
     echo "Installing mysqladapter"
