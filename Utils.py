@@ -14,6 +14,21 @@ timeseries_meta_struct = {
     'source': '',
     'name': ''
 }
+
+station_meta_struct = {
+    'stationId': 'curw_wl_sedawatta_bridge_ds',
+    'name': 'Sedawatta Bridge DS',
+    'station_meta': ['curw_wl_sedawatta_bridge_ds', 'Sedawatta Bridge DS', 6.9569179, 79.8780352, 0, 'Leecom water level guage, Leecom communication box'],
+    'source': 'WeatherStation',
+    'type': 'Observed',
+    'variables': ['Waterlevel'],
+    'units': ['m'],
+    'max_values': ['30'],
+    'min_values': ['0'],
+    'description': 'Leecom water level guage, Leecom communication box',
+    'run_name': 'Leecom',
+}
+
 def get_time_duration(pre_datetime, lat_datetime):
 
     datetime_lat = datetime.strptime(lat_datetime, '%Y-%m-%d %H:%M:%S')
@@ -173,6 +188,15 @@ def _extract_n_push(extract_adapter, push_adapter, station, start_date, end_date
         print("No value in the timeseries for the %s of station_Id: %s in the extracting DB."
               % (timeseries_meta['variable'], station['stationId']))
         return False
+
+    if station['stationId'] == 'curw_wl_test':
+        station = copy.deepcopy(station_meta_struct)
+        timeseries_meta['station'] = station['name']
+        timeseries_meta['variable'] = 'Waterlevel'
+        timeseries_meta['unit'] = 'm'
+        timeseries_meta['type'] = station['type']
+        timeseries_meta['source'] = station['source']
+        timeseries_meta['name'] = station['run_name']
 
     # Check whether there is a timeseries-id in the pushing DB.
     # If not create a timeseried-id in the DB. Else push the extracted timeseries to the pushing DB.
@@ -376,6 +400,11 @@ def extract_n_push_waterlevel(extract_adapter, push_adapter, station, start_date
     msl = station['mean_sea_level']
     wl_min = station['min_wl']
     wl_max = station['max_wl']
+
+    if station['stationId'] == 'curw_wl_test':
+        msl = 4.884
+        wl_min = -1.000
+        wl_max = 3.000
 
     # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
     timeseries_meta = copy.deepcopy(timeseries_meta_struct)
