@@ -402,7 +402,7 @@ def extract_n_push_waterlevel(extract_adapter, push_adapter, station, start_date
     wl_max = station['max_wl']
 
     if station['stationId'] == 'curw_wl_test':
-        msl = 4.884
+        msl = 5.676
         wl_min = -1.000
         wl_max = 3.000
 
