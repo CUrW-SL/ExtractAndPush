@@ -2,3 +2,4 @@
 venv/
 CONFIG.backup.json
 __pycache__/
+Backup/
