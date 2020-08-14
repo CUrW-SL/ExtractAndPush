@@ -3,3 +3,5 @@ venv/
 CONFIG.backup.json
 __pycache__/
 Backup/
+CONFIG.dist.json
+CONFIG.json
